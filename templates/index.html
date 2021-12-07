@@ -1,0 +1,74 @@
+{% extends "pages/base.html" %} {% block content %}
+<div id="root">
+    <h1 class="text-center pt-5 mt-5 white-text purple">Hello world</h1>
+    <div class="p-0 m-0 row">
+        <form method="post" class="container col-6">
+            {% csrf_token %}
+            <div class="form-group container">
+                <label for="">Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    aria-describedby="helpId"
+                    placeholder="Name"
+                />
+                <small class="form-text text-muted"
+                    >{{name|sum:password}}</small
+                >
+            </div>
+            <div class="form-group container">
+                <label for="">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    aria-describedby="helpId"
+                    placeholder="Password"
+                />
+                <small class="form-text text-muted">{{password}}</small>
+            </div>
+            <div class="text-center">
+                <input
+                    type="submit"
+                    class="text-center btn btn-sm btn-secondary shadow"
+                    value="submit"
+                />
+            </div>
+        </form>
+
+        <div class="col-6 container">
+            <div class="form-group container">
+                <label for="">Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    aria-describedby="helpId"
+                    placeholder="Name"
+                />
+                <small class="form-text text-muted">{{name}}</small>
+            </div>
+            <div class="form-group container">
+                <label for="">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    aria-describedby="helpId"
+                    placeholder="Password"
+                />
+                <small class="form-text text-muted">{{password}}</small>
+            </div>
+            <div class="text-center">
+                <button
+                    class="text-center btn btn-sm btn-secondary shadow"
+                    onclick="Ajax()"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
